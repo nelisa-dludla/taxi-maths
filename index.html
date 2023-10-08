@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8" />
+                <meta
+                        name="viewport"
+                        content="width=device-width, initial-scale=1.0"
+                />
+                <title>FrontSeat</title>
+                <link rel="stylesheet" href="./styles.css" />
+                <script src="./scripts.js" defer></script>
+        </head>
+        <body>
+                <h1>FrontSeat</h1>
+                <div class="row">
+                        <section id="init">
+                                <div class="init__container">
+                                        <div>
+                                                <label for="taxi-fare"
+                                                        >Taxi Fare:</label
+                                                >
+                                                <input
+                                                        type="number"
+                                                        id="taxi-fare"
+                                                        placeholder="R"
+                                                        required
+                                                />
+                                        </div>
+                                        <div>
+                                                <label
+                                                        for="number-of-passengers"
+                                                        ># of passengers:</label
+                                                >
+                                                <input
+                                                        type="number"
+                                                        id="number-of-passengers"
+                                                        required
+                                                />
+                                        </div>
+                                        <button id="btn__start-trip">
+                                                Start Trip
+                                        </button>
+                                </div>
+                        </section>
+                        <section id="calculations" class="hidden">
+                                <div class="calculations__container">
+                                        <div class="calculations__left-column">
+                                                <div>
+                                                        <label for="amount"
+                                                                >Amount:</label
+                                                        >
+                                                        <input
+                                                                type="number"
+                                                                id="amount"
+                                                                placeholder="R"
+                                                        />
+                                                </div>
+                                                <div>
+                                                        <label
+                                                                for="number-of-people"
+                                                                ># of
+                                                                people:</label
+                                                        >
+                                                        <input
+                                                                type="number"
+                                                                id="number-of-people"
+                                                        />
+                                                </div>
+                                                <button id="btn__calculate">
+                                                        Calculate
+                                                </button>
+                                        </div>
+                                        <div class="calculations__right-column">
+                                                <div>
+                                                        <p>Change:</p>
+                                                        <p id="change">R</p>
+                                                </div>
+                                        </div>
+                                </div>
+                        </section>
+                        <section id="stats" class="hidden">
+                                <div>
+                                        <p>Amount Collected:</p>
+                                        <p class="amount-collected">R</p>
+                                </div>
+                                <div>
+                                        <p>Amount Missing:</p>
+                                        <p class="amount-missing">R</p>
+                                </div>
+                                <div>
+                                        <p>Expected Total:</p>
+                                        <p class="expected-total">R</p>
+                                </div>
+                                <div>
+                                        <p># of People Paid:</p>
+                                        <p class="number-of-people-paid">#</p>
+                                </div>
+                                <div>
+                                        <p># of People Still Need to Pay:</p>
+                                        <p
+                                                class="number-of-people-still-to-pay"
+                                        >
+                                                #
+                                        </p>
+                                </div>
+                        </section>
+                </div>
+        </body>
+</html>

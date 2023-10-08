@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+* {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+}
+
+.row {
+        width: 100%;
+        max-width: 1200px;
+        padding: 20px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+}
+
+h1 {
+        text-align: center;
+        padding: 8px;
+        margin: 12px;
+}
+
+#init,
+#calculations,
+#stats {
+        border: 2px solid gray;
+        border-radius: 4px;
+        padding: 16px;
+        margin: 4px;
+        width: 100%;
+        max-width: 500px;
+}
+
+.calculations__container {
+        display: flex;
+        justify-content: space-between;
+}
+
+.init__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+}
+
+.hidden {
+        display: none;
+}
+
+p,
+label {
+        font-size: 18px;
+        margin: 4px;
+}
+
+label,
+input {
+        display: block;
+}
+
+input {
+        font-size: 18px;
+        border-radius: 4px;
+        width: 100%;
+        max-width: 150px;
+        padding: 4px;
+}
+
+button {
+        width: 100%;
+        max-width: 150px;
+        padding: 8px;
+        margin: 8px 0;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: bold;
+}
+
+button:hover {
+        cursor: pointer;
+}
+
+.hidden {
+        display: none;
+}
+
+/* INIT */
+
+/* CALCULATIONS */
+
+.calculations__left-column div {
+        width: 100%;
+}
+
+.calculations__right-column {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+}
+
+.calculations__right-column p {
+        font-size: 24px;
+}
+
+/* STATS */
+#stats div {
+        margin: 4px 0;
+}
