@@ -13,7 +13,7 @@ FrontSeat is a simple web app designed to assist in collecting and managing mini
 
 ## Usage
 
-1. Open the [FrontSeat](https://frontseat.pages.dev){:target='\_blank'} web app in your browser.
+1. Open the [FrontSeat](https://frontseat.pages.dev) web app in your browser.
 2. Input the fixed taxi fare per person and the total number of passengers in the "Start Trip" section.
 3. Click the "Start Trip" button.
 4. In the "Calculations" section, input the amount paid by passengers and the number of people paying.
