@@ -65,7 +65,6 @@ calculateBtn.addEventListener("click", () => {
         const change = amount - numberOfPeople * taxiFare;
 
         if (amount >= numberOfPeople * taxiFare) {
-                console.log(`${amount} < ${numberOfPeople} * ${taxiFare}`);
                 const expected = taxiFare * numOfPassengers;
                 changeEle.innerText = `R${change}`;
 

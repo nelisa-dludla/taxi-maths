@@ -162,6 +162,10 @@ button:hover {
 }
 
 @media (max-width: 426px) {
+        h1 {
+                margin: 8px 12px;
+        }
+
         #calculations input {
                 max-width: 150px;
         }

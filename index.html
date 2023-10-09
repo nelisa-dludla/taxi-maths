@@ -42,6 +42,7 @@
                                                 <input
                                                         type="number"
                                                         id="number-of-passengers"
+                                                        placeholder="e.g. 12"
                                                         required
                                                 />
                                         </div>
@@ -57,56 +58,6 @@
                                                 the trip.
                                         </p>
                                 </div>
-                        </section>
-                        <section id="calculations" class="hidden">
-                                <div class="calculations__container">
-                                        <div class="calculations__left-column">
-                                                <div>
-                                                        <label for="amount"
-                                                                >Amount:</label
-                                                        >
-                                                        <input
-                                                                type="number"
-                                                                id="amount"
-                                                                placeholder="R"
-                                                        />
-                                                </div>
-                                                <div>
-                                                        <label
-                                                                for="number-of-people"
-                                                                ># of
-                                                                people:</label
-                                                        >
-                                                        <input
-                                                                type="number"
-                                                                id="number-of-people"
-                                                        />
-                                                </div>
-                                                <button id="btn__calculate">
-                                                        Calculate
-                                                </button>
-                                        </div>
-                                        <div class="calculations__right-column">
-                                                <div>
-                                                        <p>Change:</p>
-                                                        <p id="change">R0</p>
-                                                </div>
-                                        </div>
-                                </div>
-                                <p
-                                        id="calculations__alert"
-                                        class="alert hidden"
-                                >
-                                        Invalid Calculation. Amount is too small
-                                        to cover above passengers.
-                                </p>
-                        </section>
-                        <section id="job-done" class="hidden">
-                                <p class="message">
-                                        Job Well Done! 👍🏾<br />Enjoy the rest of
-                                        your trip. 🙂
-                                </p>
-                                <p>(Refresh the page to start new trip.)</p>
                         </section>
                         <section id="stats" class="hidden">
                                 <div>
@@ -140,6 +91,55 @@
                                                 0
                                         </p>
                                 </div>
+                        </section>
+                        <section id="calculations" class="hidden">
+                                <div class="calculations__container">
+                                        <div class="calculations__left-column">
+                                                <div>
+                                                        <label for="amount"
+                                                                >Amount:</label
+                                                        >
+                                                        <input
+                                                                type="number"
+                                                                id="amount"
+                                                                placeholder="R"
+                                                        />
+                                                </div>
+                                                <div>
+                                                        <label
+                                                                for="number-of-people"
+                                                                ># of
+                                                                people:</label
+                                                        >
+                                                        <input
+                                                                type="number"
+                                                                id="number-of-people"
+                                                        />
+                                                </div>
+                                                <button id="btn__calculate">
+                                                        Calculate
+                                                </button>
+                                        </div>
+                                        <div class="calculations__right-column">
+                                                <div>
+                                                        <p>Return:</p>
+                                                        <p id="change">R0</p>
+                                                </div>
+                                        </div>
+                                </div>
+                                <p
+                                        id="calculations__alert"
+                                        class="alert hidden"
+                                >
+                                        Invalid Calculation.
+                                </p>
+                        </section>
+                        <section id="job-done" class="hidden">
+                                <p class="message">
+                                        Job Well Done! 👍🏾<br />Enjoy the rest of
+                                        your trip. 🙂
+                                </p>
+                                <p>(Refresh the page to start new trip.)</p>
                         </section>
                 </div>
         </body>
