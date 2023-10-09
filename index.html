@@ -119,11 +119,14 @@
                                                 <button id="btn__calculate">
                                                         Calculate
                                                 </button>
+                                                <button class="btn__history">
+                                                        History
+                                                </button>
                                         </div>
                                         <div class="calculations__right-column">
                                                 <div>
                                                         <p>Return:</p>
-                                                        <p id="change">R0</p>
+                                                        <p class="return">R0</p>
                                                 </div>
                                         </div>
                                 </div>
@@ -135,11 +138,26 @@
                                 </p>
                         </section>
                         <section id="job-done" class="hidden">
-                                <p class="message">
-                                        Job Well Done! 👍🏾<br />Enjoy the rest of
-                                        your trip. 🙂
-                                </p>
-                                <p>(Refresh the page to start new trip.)</p>
+                                <div class="message">
+                                        <div>
+                                                <p class="job-done__return">
+                                                        Return:
+                                                </p>
+                                                <p class="return"></p>
+                                                <button class="btn__history">
+                                                        History
+                                                </button>
+                                        </div>
+                                        <p>Job Well Done! 👍🏾</p>
+                                        <p>Enjoy the rest of your trip. 🙂</p>
+                                        <p class="refresh-message">
+                                                (Refresh the page to start new
+                                                trip.)
+                                        </p>
+                                </div>
+                        </section>
+                        <section id="history" class="hidden">
+                                <div id="list"></div>
                         </section>
                 </div>
         </body>

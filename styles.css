@@ -39,7 +39,8 @@ img {
 #init,
 #calculations,
 #stats,
-#job-done {
+#job-done,
+#history {
         border: 1px solid gray;
         border-radius: 4px;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -127,10 +128,14 @@ button:hover {
         font-weight: bold;
 }
 
-#job-done p:nth-child(2) {
+.refresh-message {
         font-style: italic;
         margin-top: 8px;
         color: gray;
+}
+
+#job-done button {
+        width: 100px;
 }
 
 /* CALCULATIONS */
@@ -141,6 +146,7 @@ button:hover {
 
 .calculations__right-column {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         font-weight: bold;
@@ -151,6 +157,10 @@ button:hover {
         font-size: 24px;
 }
 
+.btn__history {
+        background-color: gray;
+}
+
 /* STATS */
 #stats div {
         margin: 4px 0;
@@ -159,6 +169,11 @@ button:hover {
 
 #stats p:nth-child(1) {
         font-weight: bold;
+}
+
+/* HISTORY */
+li {
+        font-size: 18px;
 }
 
 @media (max-width: 426px) {

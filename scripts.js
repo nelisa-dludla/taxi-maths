@@ -11,8 +11,9 @@ const calculationsSection = document.getElementById("calculations");
 const amountEle = document.getElementById("amount");
 const numberOfPeopleEle = document.getElementById("number-of-people");
 const calculateBtn = document.getElementById("btn__calculate");
-const changeEle = document.getElementById("change");
+const returnElements = document.querySelectorAll(".return");
 const calculationsAlert = document.getElementById("calculations__alert");
+const historyBtns = document.querySelectorAll(".btn__history");
 
 // JOB DONE SECTION VARIABLE
 const jobDoneSection = document.getElementById("job-done");
@@ -27,10 +28,33 @@ const peopleStillToPay = document.querySelector(
         ".number-of-people-still-to-pay"
 );
 
+// HISTORY SECTION VARIABLES
+const historySection = document.getElementById("history");
+const historyList = document.getElementById("list");
+
 // Functions
 const isValidTrip = (taxiFare, numOfPassengers) =>
         taxiFare && numOfPassengers ? true : false;
 
+const storeCalculations = (
+        amount,
+        numberOfPeople,
+        returnAmount,
+        historyData
+) => {
+        historyData.push(
+                `Recieved R${amount} for ${numberOfPeople} people and returned R${returnAmount}.`
+        );
+};
+
+const updateHistory = () => {
+        let html = "";
+        historyData.forEach((ele) => {
+                html += `<li>${ele}</li>`;
+        });
+
+        historyList.innerHTML = html;
+};
 // Event Listeners
 startTripBtn.addEventListener("click", () => {
         const taxiFare = parseFloat(taxiFareEle.value);
@@ -56,25 +80,28 @@ let collected = 0;
 let missing = 0;
 let numOfPeoplePaid = 0;
 let needToPay = 0;
+let historyData = [];
 
 calculateBtn.addEventListener("click", () => {
         const amount = parseFloat(amountEle.value);
         const numberOfPeople = parseInt(numberOfPeopleEle.value);
         const taxiFare = parseFloat(taxiFareEle.value);
         const numOfPassengers = parseInt(numOfPassengersEle.value);
-        const change = amount - numberOfPeople * taxiFare;
+        const returnAmount = amount - numberOfPeople * taxiFare;
 
         if (amount >= numberOfPeople * taxiFare) {
                 const expected = taxiFare * numOfPassengers;
-                changeEle.innerText = `R${change}`;
+                returnElements.forEach(
+                        (ele) => (ele.innerText = `R${returnAmount}`)
+                );
 
-                collected += amount - change;
+                collected += amount - returnAmount;
                 amountCollected.textContent = `R${collected}`;
 
                 missing = expected - collected;
                 amountMissing.innerText = `R${missing}`;
 
-                numOfPeoplePaid += (amount - change) / taxiFare;
+                numOfPeoplePaid += (amount - returnAmount) / taxiFare;
                 peopleWhoPaid.innerText = `${numOfPeoplePaid}`;
 
                 needToPay = (expected - collected) / taxiFare;
@@ -82,11 +109,32 @@ calculateBtn.addEventListener("click", () => {
 
                 calculationsAlert.classList.add("hidden");
 
+                storeCalculations(
+                        amount,
+                        numberOfPeople,
+                        returnAmount,
+                        historyData
+                );
+
+                console.log(historyData);
+
                 if (collected === expected && needToPay === 0) {
                         jobDoneSection.classList.remove("hidden");
                         calculationsSection.classList.add("hidden");
+                        historySection.classList.add("hidden");
                 }
         } else {
                 calculationsAlert.classList.remove("hidden");
         }
 });
+
+historyBtns.forEach((button) => {
+        button.addEventListener("click", () =>
+                historySection.classList.toggle("hidden")
+        );
+});
+// historyBtn.addEventListener("click", () => {
+//         historySection.classList.toggle("hidden");
+// });
+
+setInterval(updateHistory, 1000);
