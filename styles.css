@@ -7,6 +7,10 @@
         font-family: "Roboto", sans-serif;
 }
 
+body {
+        background-color: #faf9f6;
+}
+
 .row {
         width: 100%;
         max-width: 1200px;
@@ -23,11 +27,22 @@ h1 {
         margin: 12px;
 }
 
+figure {
+        max-width: 250px;
+        margin-bottom: 16px;
+}
+
+img {
+        width: 100%;
+}
+
 #init,
 #calculations,
-#stats {
-        border: 2px solid gray;
+#stats,
+#job-done {
+        border: 1px solid gray;
         border-radius: 4px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         padding: 16px;
         margin: 4px;
         width: 100%;
@@ -46,8 +61,8 @@ h1 {
         justify-content: center;
 }
 
-.hidden {
-        display: none;
+.feature-color {
+        color: #6c63ff;
 }
 
 p,
@@ -65,18 +80,29 @@ input {
         font-size: 18px;
         border-radius: 4px;
         width: 100%;
-        max-width: 150px;
+        max-width: 200px;
         padding: 4px;
+}
+
+input:hover {
+        border-color: #6c63ff;
+}
+
+input:focus {
+        border: 3px solid #6c63ff;
 }
 
 button {
         width: 100%;
-        max-width: 150px;
+        max-width: 200px;
         padding: 8px;
         margin: 8px 0;
         border-radius: 4px;
         font-size: 16px;
         font-weight: bold;
+        background-color: #6c63ff;
+        color: white;
+        border: none;
 }
 
 button:hover {
@@ -89,6 +115,24 @@ button:hover {
 
 /* INIT */
 
+.alert {
+        color: red;
+        font-size: 16px;
+        text-align: center;
+}
+
+/* JOB DONE */
+.message {
+        font-size: 24px;
+        font-weight: bold;
+}
+
+#job-done p:nth-child(2) {
+        font-style: italic;
+        margin-top: 8px;
+        color: gray;
+}
+
 /* CALCULATIONS */
 
 .calculations__left-column div {
@@ -100,6 +144,7 @@ button:hover {
         justify-content: center;
         align-items: center;
         font-weight: bold;
+        margin: 0 auto;
 }
 
 .calculations__right-column p {
@@ -109,4 +154,23 @@ button:hover {
 /* STATS */
 #stats div {
         margin: 4px 0;
+        padding: 4px;
+}
+
+#stats p:nth-child(1) {
+        font-weight: bold;
+}
+
+@media (max-width: 426px) {
+        #calculations input {
+                max-width: 100px;
+        }
+
+        #calculations button {
+                max-width: 100px;
+        }
+
+        #calculations__right-column p {
+                font-size: 16px;
+        }
 }

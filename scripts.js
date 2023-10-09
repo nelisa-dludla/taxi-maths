@@ -3,6 +3,8 @@ const initSection = document.getElementById("init");
 const taxiFareEle = document.getElementById("taxi-fare");
 const numOfPassengersEle = document.getElementById("number-of-passengers");
 const startTripBtn = document.getElementById("btn__start-trip");
+const initAlert = document.getElementById("init__alert");
+const image = document.getElementById("image");
 
 // CALCULATIONS SECTION VARIABLES
 const calculationsSection = document.getElementById("calculations");
@@ -10,6 +12,10 @@ const amountEle = document.getElementById("amount");
 const numberOfPeopleEle = document.getElementById("number-of-people");
 const calculateBtn = document.getElementById("btn__calculate");
 const changeEle = document.getElementById("change");
+const calculationsAlert = document.getElementById("calculations__alert");
+
+// JOB DONE SECTION VARIABLE
+const jobDoneSection = document.getElementById("job-done");
 
 // STATS SECTION VARIABLES
 const statsSection = document.getElementById("stats");
@@ -37,11 +43,12 @@ startTripBtn.addEventListener("click", () => {
                 peopleWhoPaid.textContent = "0";
                 peopleStillToPay.textContent = "0";
 
-                calculationsSection.classList.toggle("hidden");
-                statsSection.classList.toggle("hidden");
-                initSection.classList.toggle("hidden");
+                calculationsSection.classList.remove("hidden");
+                statsSection.classList.remove("hidden");
+                initSection.classList.add("hidden");
+                image.classList.add("hidden");
         } else {
-                console.log("This trip is not valid");
+                initAlert.classList.remove("hidden");
         }
 });
 
@@ -56,9 +63,9 @@ calculateBtn.addEventListener("click", () => {
         const taxiFare = parseFloat(taxiFareEle.value);
         const numOfPassengers = parseInt(numOfPassengersEle.value);
         const change = amount - numberOfPeople * taxiFare;
-        let activeTrip = true;
 
-        while (activeTrip) {
+        if (amount >= numberOfPeople * taxiFare) {
+                console.log(`${amount} < ${numberOfPeople} * ${taxiFare}`);
                 const expected = taxiFare * numOfPassengers;
                 changeEle.innerText = `R${change}`;
 
@@ -71,14 +78,16 @@ calculateBtn.addEventListener("click", () => {
                 numOfPeoplePaid += (amount - change) / taxiFare;
                 peopleWhoPaid.innerText = `${numOfPeoplePaid}`;
 
-                console.log(
-                        `needToPay = (${expected} - ${numOfPeoplePaid}) / ${taxiFare})`
-                );
                 needToPay = (expected - collected) / taxiFare;
                 peopleStillToPay.innerText = `${needToPay}`;
 
-                if (amountCollected === expectedTotal) {
-                        active = false;
+                calculationsAlert.classList.add("hidden");
+
+                if (collected === expected && needToPay === 0) {
+                        jobDoneSection.classList.remove("hidden");
+                        calculationsSection.classList.add("hidden");
                 }
+        } else {
+                calculationsAlert.classList.remove("hidden");
         }
 });

@@ -11,13 +11,20 @@
                 <script src="./scripts.js" defer></script>
         </head>
         <body>
-                <h1>FrontSeat</h1>
+                <h1>Front<span class="feature-color">Seat</span></h1>
                 <div class="row">
+                        <figure id="image">
+                                <img
+                                        src="./assets/undraw_calculator.svg"
+                                        alt=""
+                                />
+                        </figure>
                         <section id="init">
                                 <div class="init__container">
                                         <div>
                                                 <label for="taxi-fare"
-                                                        >Taxi Fare:</label
+                                                        >Taxi Fare per
+                                                        person:</label
                                                 >
                                                 <input
                                                         type="number"
@@ -29,7 +36,8 @@
                                         <div>
                                                 <label
                                                         for="number-of-passengers"
-                                                        ># of passengers:</label
+                                                        >Number of
+                                                        passengers:</label
                                                 >
                                                 <input
                                                         type="number"
@@ -40,6 +48,14 @@
                                         <button id="btn__start-trip">
                                                 Start Trip
                                         </button>
+                                        <p
+                                                id="init__alert"
+                                                class="alert hidden"
+                                        >
+                                                Please enter a taxi fare and
+                                                number of passengers to start
+                                                the trip.
+                                        </p>
                                 </div>
                         </section>
                         <section id="calculations" class="hidden">
@@ -73,34 +89,55 @@
                                         <div class="calculations__right-column">
                                                 <div>
                                                         <p>Change:</p>
-                                                        <p id="change">R</p>
+                                                        <p id="change">R0</p>
                                                 </div>
                                         </div>
                                 </div>
+                                <p
+                                        id="calculations__alert"
+                                        class="alert hidden"
+                                >
+                                        Invalid Calculation. Amount is too small
+                                        to cover above passengers.
+                                </p>
+                        </section>
+                        <section id="job-done" class="hidden">
+                                <p class="message">
+                                        Job Well Done! 👍🏾<br />Enjoy the rest of
+                                        your trip. 🙂
+                                </p>
+                                <p>(Refresh the page to start new trip.)</p>
                         </section>
                         <section id="stats" class="hidden">
                                 <div>
                                         <p>Amount Collected:</p>
-                                        <p class="amount-collected">R</p>
+                                        <p class="amount-collected">R0</p>
                                 </div>
+                                <hr />
                                 <div>
                                         <p>Amount Missing:</p>
-                                        <p class="amount-missing">R</p>
+                                        <p class="amount-missing">R0</p>
                                 </div>
+                                <hr />
                                 <div>
-                                        <p>Expected Total:</p>
-                                        <p class="expected-total">R</p>
+                                        <p>Expected Total (Driver's Money):</p>
+                                        <p class="expected-total">R0</p>
                                 </div>
+                                <hr />
                                 <div>
-                                        <p># of People Paid:</p>
-                                        <p class="number-of-people-paid">#</p>
+                                        <p>Number of People Who Paid:</p>
+                                        <p class="number-of-people-paid">0</p>
                                 </div>
+                                <hr />
                                 <div>
-                                        <p># of People Still Need to Pay:</p>
+                                        <p>
+                                                Number of People Who Still Need
+                                                to Pay:
+                                        </p>
                                         <p
                                                 class="number-of-people-still-to-pay"
                                         >
-                                                #
+                                                0
                                         </p>
                                 </div>
                         </section>
