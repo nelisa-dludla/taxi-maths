@@ -163,11 +163,11 @@ button:hover {
 
 @media (max-width: 426px) {
         #calculations input {
-                max-width: 100px;
+                max-width: 150px;
         }
 
         #calculations button {
-                max-width: 100px;
+                max-width: 150px;
         }
 
         #calculations__right-column p {
