@@ -35,7 +35,7 @@ const historyList = document.getElementById("list");
 
 // FUNCTIONS
 const isValidTrip = (taxiFare, numOfPassengers) =>
-        taxiFare && numOfPassengers ? true : false;
+        taxiFare > 0 && numOfPassengers > 0 ? true : false;
 
 const storeCalculations = (
         amount,
@@ -128,7 +128,10 @@ calculateBtn.addEventListener("click", () => {
         const returnAmount = amount - numberOfPeople * taxiFare;
 
         // Check if the amount is enough to cover the number of people
-        if (amount >= numberOfPeople * taxiFare) {
+        if (
+                amount >= numberOfPeople * taxiFare &&
+                numberOfPeople * taxiFare > 0
+        ) {
                 let expected = taxiFare * numOfPassengers;
                 calculateCount += 1;
 
