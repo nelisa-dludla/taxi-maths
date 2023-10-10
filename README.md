@@ -38,7 +38,3 @@ _Screenshot displaying the "Job Well Done" message._
 ## Dependencies
 
 - [Roboto Font](https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap) is used for typography.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
