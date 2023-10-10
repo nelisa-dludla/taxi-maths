@@ -10,6 +10,8 @@ FrontSeat is a simple web app designed to assist in collecting and managing mini
 - Calculate the expected total (driver's money).
 - Keep count of the number of people who have paid and those who still need to pay.
 - Easily reset for a new trip by refreshing the page.
+- View a history of calculations for the current trip.
+- Undo previous calculations in case of errors.
 
 ## Usage
 
@@ -18,7 +20,9 @@ FrontSeat is a simple web app designed to assist in collecting and managing mini
 3. Click the "Start Trip" button.
 4. In the "Calculations" section, input the amount paid by passengers and the number of people paying.
 5. Click the "Calculate" button to see the change, update the amounts, and keep track of payments.
-6. When the collected amount equals the expected total, and no one needs to pay, you'll see a "Job Well Done" message.
+6. Use the "History" button to view a history of calculations for the current trip.
+7. If you make a mistake, you can use the "Undo" button to revert previous calculations.
+8. When the collected amount equals the expected total, and no one needs to pay, you'll see a "Job Well Done" message.
 
 ## Screenshots
 
